@@ -1,0 +1,407 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #121212;
+  color: #fff;
+  line-height: 1.6;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1f1f1f;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #00ffaa;
+}
+
+nav a {
+  color: #ccc;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #00ffaa;
+}
+
+header button {
+  background: #00ffaa;
+  color: #000;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+header button:hover {
+  transform: scale(1.05);
+}
+
+.hero {
+  background: linear-gradient(135deg, #111, #222);
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero button {
+  background: #00ffaa;
+  color: #000;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 1rem;
+  color: #00ffaa;
+}
+
+.mentor-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.mentor-card {
+  background: #1a1a1a;
+  padding: 1.5rem;
+  border-radius: 12px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.mentor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 255, 170, 0.2);
+}
+
+.mentor-card img {
+  width: 100%;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.mentor-card h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.filter {
+  margin: 1rem 0;
+}
+
+.filter button {
+  background: #333;
+  color: #fff;
+  border: none;
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.filter button:hover {
+  background: #00ffaa;
+  color: #000;
+}
+
+footer {
+  background: #1f1f1f;
+  padding: 2rem;
+  text-align: center;
+  color: #777;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 12px;
+  display: none;
+  flex-direction: column;
+  z-index: 1001;
+  transition: all 0.3s ease;
+  max-width: 400px;
+  width: 90%;
+}
+
+.modal.show {
+  display: flex;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal input {
+  background: #111;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 0.7rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+}
+
+.modal button {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  background: #00ffaa;
+  border: none;
+  color: #000;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.switch {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.switch span {
+  color: #00ffaa;
+  cursor: pointer;
+}
+
+#closeModal, #closeBio {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #888;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 1000;
+  display: none;
+}
+
+.overlay.show {
+  display: block;
+}
+
+/* Модалка био */
+#bioModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 12px;
+  display: none;
+  flex-direction: column;
+  z-index: 1002;
+  transition: all 0.3s ease;
+  max-width: 400px;
+  color: #fff;
+}
+
+#bioModal.show {
+  display: flex;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+#bioModal h2 {
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 1rem;
+}
+
+#bioModal p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    margin-top: 1rem;
+  }
+
+  nav a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+button {
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55) !important;
+  transform-origin: center;
+  position: relative;
+  overflow: hidden;
+}
+
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgb(0, 255, 162) !important;
+}
+
+
+button:active {
+  transform: translateY(1px) scale(0.97);
+  box-shadow: 0 3px 10px rgba(0, 255, 170, 0.473) !important;
+}
+
+
+.hero button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  border-radius: 8px;
+}
+
+.hero button:hover::after {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+/* Загрузочная анимация для кнопок */
+@media (prefers-reduced-motion: no-preference) {
+  .hero button {
+    animation: slideIn 1s 0.5s both;
+  }
+
+  #registerBtn {
+    animation: popIn 0.8s 1s both;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px) rotate(2deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+  }
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.modal {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.8);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.modal.show {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Анимация оверлея */
+.overlay {
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.overlay.show {
+  opacity: 1;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

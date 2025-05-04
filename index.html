@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MentorLink</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">MentorLink</div>
+    <nav>
+      <a href="#about">О платформе</a>
+      <a href="#mentors">Менторы</a>
+      <a href="#contacts">Контакты</a>
+      <a href="#support">Поддержка</a>
+    </nav>
+    <button id="registerBtn">Регистрация</button>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Найди своего ментора</h1>
+      <p>Где цели становятся реальностью</p>
+      <button>Начать сейчас</button>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <h2>О платформе</h2>
+    <p>MentorLink соединяет учеников с опытными наставниками с помощью AI и блокчейн-технологий.</p>
+  </section>
+
+  <section class="mentors" id="mentors">
+    <h2>Наши менторы</h2>
+    <div class="filter">
+      <button data-filter="all">Все</button>
+      <button data-filter="it">IT</button>
+      <button data-filter="design">Дизайн</button>
+      <button data-filter="business">Бизнес</button>
+    </div>
+    <div class="mentor-cards">
+      <!-- Менторы будут вставлены через JS -->
+    </div>
+  </section>
+
+  <section class="contacts" id="contacts">
+    <h2>Контакты</h2>
+    <p>Email: support@mentorlink.io</p>
+    <p>Telegram: @mentorlink_support</p>
+  </section>
+
+  <section class="support" id="support">
+    <h2>Поддержка</h2>
+    <p>Нужна помощь? Мы всегда на связи!</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 MentorLink</p>
+  </footer>
+
+  <div class="overlay" id="overlay"></div>
+
+
+  <div class="modal" id="modal">
+    <h2 id="modalTitle">Регистрация</h2>
+    <input type="text" placeholder="Логин" />
+    <input type="password" placeholder="Пароль" />
+    <button>Продолжить</button>
+    <p class="switch">Уже есть аккаунт? <span id="toggleAuth">Войти</span></p>
+    <span id="closeModal">&times;</span>
+  </div>
+
+ 
+  <div class="modal" id="bioModal">
+    <h2 id="bioName">Имя Ментора</h2>
+    <p id="bioText">Биография</p>
+    <span id="closeBio">&times;</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
